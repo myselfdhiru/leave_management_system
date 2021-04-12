@@ -1,0 +1,357 @@
+ {
+        "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+        "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+        "companyId": "190b1d56-c4b1-4aab-b273-f686ed1c8fa3",
+        "name": "Leave system",
+        "schema": {
+            "title": "Leave system",
+            "type": "object",
+            "description": "form",
+            "properties": {
+                "l": {
+                    "title": "Leave Type",
+                    "type": "string",
+                    "description": "string_list",
+                    "enum": [
+                        "Earned Leave (EL)",
+                        "Casual Leave (CL)",
+                        "Medical Leave (Med. L)",
+                        "Maternity Leave (Mat. L)",
+                        "Child Care Leave (Child Cr.)",
+                        "Reward Leave (RL)"
+                    ]
+                },
+                "f": {
+                    "title": "From",
+                    "type": "number",
+                    "description": "timestamp",
+                    "maximum": 31,
+                    "minimum": 0,
+                    "systemTime": false,
+                    "format": "dd MMM yyyy",
+                    "timeUnit": "DAY"
+                },
+                "to": {
+                    "title": "To",
+                    "type": "number",
+                    "description": "timestamp",
+                    "minimum": 0,
+                    "format": "dd MMM yyyy",
+                    "timeUnit": "DAY"
+                },
+                "du": {
+                    "title": "Duration in days",
+                    "type": "number",
+                    "description": "number",
+                    "predicates": [
+                        {
+                            "action": "CALC",
+                            "actionConfig": {
+                                "formula": "Math.round(((new Date(this.to)).getTime() - (new Date(this.f)).getTime()) / (1000 * 3600 * 24));"
+                            }
+                        }
+                    ],
+                    "accessMatrix": {
+                        "readOnly": true
+                    }
+                },
+                "re": {
+                    "title": "Reason for leave",
+                    "type": "string",
+                    "description": "textfield"
+                },
+                "a": {
+                    "title": "Attach Documents",
+                    "type": "object",
+                    "description": "multimedia",
+                    "properties": {
+                        "thumbnail": {
+                            "type": "string"
+                        },
+                        "size": {
+                            "type": "number"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "caption": {
+                            "type": "string"
+                        },
+                        "contentType": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "hint": "Eg. DOB proof for children, Medical Certificate, Medical Reports etc..",
+                    "maxSize": 5000000,
+                    "minSize": 1000,
+                    "multimediaType": "document",
+                    "disableFilepicker": false
+                },
+                "le": {
+                    "title": "Leave information",
+                    "type": "string",
+                    "description": "label"
+                },
+                "r": {
+                    "title": "Relevant  Document",
+                    "type": "string",
+                    "description": "label"
+                },
+                "p": {
+                    "title": "Personal Information",
+                    "type": "string",
+                    "description": "label"
+                },
+                "n": {
+                    "title": "Name",
+                    "type": "string",
+                    "description": "textfield"
+                },
+                "c": {
+                    "title": "Contact Number",
+                    "type": "string",
+                    "description": "phone"
+                },
+                "e": {
+                    "title": "Email Id",
+                    "type": "string",
+                    "description": "email"
+                },
+                "ad": {
+                    "title": "Address",
+                    "type": "string",
+                    "description": "textfield"
+                },
+                "g": {
+                    "title": "Go3 Remarks",
+                    "type": "object",
+                    "description": "section",
+                    "properties": {
+                        "s": {
+                            "title": "Remark",
+                            "type": "string",
+                            "description": "textfield",
+                            "accessMatrix": {
+                                "visibility": "INVISIBLE"
+                            }
+                        },
+                        "rem": {
+                            "title": "Remark date",
+                            "type": "number",
+                            "description": "timestamp",
+                            "minimum": 0,
+                            "systemTime": false,
+                            "format": "dd MMM yyyy",
+                            "timeUnit": "DAY"
+                        }
+                    },
+                    "required": [
+                        "rem",
+                        "s"
+                    ],
+                    "order": [
+                        "s",
+                        "rem"
+                    ],
+                    "accessMatrix": {
+                        "visibility": "INVISIBLE"
+                    }
+                },
+                "go": {
+                    "title": "Go2 Remarks",
+                    "type": "object",
+                    "description": "section",
+                    "properties": {
+                        "s": {
+                            "title": "Remark",
+                            "type": "string",
+                            "description": "textfield",
+                            "accessMatrix": {
+                                "visibility": "INVISIBLE"
+                            }
+                        },
+                        "rem": {
+                            "title": "Remark date",
+                            "type": "number",
+                            "description": "timestamp",
+                            "minimum": 0,
+                            "systemTime": false,
+                            "format": "dd MMM yyyy",
+                            "timeUnit": "DAY"
+                        }
+                    },
+                    "required": [
+                        "rem",
+                        "s"
+                    ],
+                    "order": [
+                        "s",
+                        "rem"
+                    ],
+                    "accessMatrix": {
+                        "visibility": "INVISIBLE"
+                    }
+                },
+                "go_": {
+                    "title": "Go1 Remarks",
+                    "type": "object",
+                    "description": "section",
+                    "properties": {
+                        "s": {
+                            "title": "Remark",
+                            "type": "string",
+                            "description": "textfield",
+                            "accessMatrix": {
+                                "visibility": "INVISIBLE"
+                            }
+                        },
+                        "rem": {
+                            "title": "Remark date",
+                            "type": "number",
+                            "description": "timestamp",
+                            "minimum": 0,
+                            "systemTime": false,
+                            "format": "dd MMM yyyy",
+                            "timeUnit": "DAY"
+                        }
+                    },
+                    "required": [
+                        "rem",
+                        "s"
+                    ],
+                    "order": [
+                        "s",
+                        "rem"
+                    ],
+                    "accessMatrix": {
+                        "visibility": "INVISIBLE"
+                    }
+                }
+            },
+            "required": [
+                "n",
+                "c",
+                "e",
+                "l",
+                "f",
+                "to"
+            ],
+            "order": [
+                "p",
+                "n",
+                "c",
+                "e",
+                "ad",
+                "le",
+                "l",
+                "f",
+                "to",
+                "du",
+                "re",
+                "r",
+                "a",
+                "g",
+                "go",
+                "go_"
+            ]
+        },
+        "adminOnly": false,
+        "isPublic": false,
+        "task": false,
+        "master": false,
+        "linkableOnly": false,
+        "disableDelete": true,
+        "updatable": false,
+        "chatDisabled": false,
+        "statuses": [
+            "Leave Applied",
+            "Recommended",
+            "Approved",
+            "Rejected",
+            "Cancelled"
+        ],
+        "createdOn": 1586411256264,
+        "createdBy": "c473324d-d7ae-456e-8aad-1e43dbbea840",
+        "createdByName": "Dhiru",
+        "createdByPhone": "+918265863081",
+        "workflowId": "b037e407-5aa8-407e-98a0-303b284aa924",
+        "queries": [
+            {
+                "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+                "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+                "queryId": "9d7a5480-7a25-11ea-b255-e1befd4a3bf2",
+                "queryName": "'lms' by users",
+                "groupBy": [
+                    "createdBy"
+                ],
+                "dateRange": "Last month",
+                "startDate": 0,
+                "endDate": 0,
+                "hidden": false,
+                "aggregationType": "AGGREGATED"
+            },
+            {
+                "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+                "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+                "queryId": "9d7a5481-7a25-11ea-b255-e1befd4a3bf2",
+                "queryName": "'lms' by date and user",
+                "display": "daily",
+                "groupBy": [
+                    "createdOn",
+                    "createdBy"
+                ],
+                "dateRange": "Last month",
+                "startDate": 0,
+                "endDate": 0,
+                "hidden": false,
+                "aggregationType": "AGGREGATED"
+            },
+            {
+                "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+                "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+                "queryId": "9d7a5482-7a25-11ea-b255-e1befd4a3bf2",
+                "queryName": "'Leave Type' grouped by date and item",
+                "fieldType": "string",
+                "fieldDescription": "string_list",
+                "fieldName": "l",
+                "display": "daily",
+                "groupBy": [
+                    "createdOn"
+                ],
+                "dateRange": "Last 7 days",
+                "startDate": 0,
+                "endDate": 0,
+                "hidden": false,
+                "aggregationType": "AGGREGATED"
+            },
+            {
+                "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+                "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+                "queryId": "9d7a5483-7a25-11ea-b255-e1befd4a3bf2",
+                "queryName": "'Duration in days' grouped by date and user",
+                "fieldType": "number",
+                "fieldDescription": "number",
+                "fieldName": "du",
+                "display": "daily",
+                "groupBy": [
+                    "createdOn",
+                    "createdBy"
+                ],
+                "dateRange": "Last 7 days",
+                "startDate": 0,
+                "endDate": 0,
+                "hidden": false,
+                "aggregationType": "AGGREGATED"
+            }
+        ],
+        "assignable": false,
+        "hidden": false,
+        "formIsParent": false,
+        "formIsChild": false,
+        "alarmIds": [
+            "5f70bbf3-c20e-4f51-b81f-f8c8141615cd"
+        ]
+    }

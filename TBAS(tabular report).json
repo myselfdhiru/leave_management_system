@@ -1,0 +1,107 @@
+ {
+            "companyId": "190b1d56-c4b1-4aab-b273-f686ed1c8fa3",
+            "reportId": "50c45640-9f3c-11ea-be26-e72744d5ad38",
+            "reportType": "CUSTOM_NATIVE",
+            "title": "LMS(Tabular Report)",
+            "reportConfig": {
+                "type": "CHARTS",
+                "sources": [
+                    {
+                        "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+                        "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+                        "mode": "PUBLIC",
+                        "dataSource": "FORM_QUERY",
+                        "select": [
+                            "n",
+                            "c",
+                            "e",
+                            "ad",
+                            "l",
+                            "f",
+                            "to",
+                            "du",
+                            "re",
+                            "a"
+                        ]
+                    }
+                ],
+                "responseConfigs": [
+                    {
+                        "responseId": 0,
+                        "mergeStrategy": {
+                            "strategy": "ROW_JOIN"
+                        },
+                        "chartType": "table",
+                        "switchXY": false,
+                        "columns": [
+                            {
+                                "title": "Name",
+                                "key": "n",
+                                "type": "DATA",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "Contact Number",
+                                "key": "c",
+                                "type": "DATA",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "Email Id",
+                                "key": "e",
+                                "type": "DATA",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "Address",
+                                "key": "ad",
+                                "type": "DATA",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "Leave Type",
+                                "key": "l",
+                                "type": "DATA",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "From",
+                                "key": "f",
+                                "type": "DATA",
+                                "format": "dd MMM yyyy",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "To",
+                                "key": "to",
+                                "type": "DATA",
+                                "format": "dd MMM yyyy",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "Duration in days",
+                                "key": "du",
+                                "type": "FACT",
+                                "dataType": "number"
+                            },
+                            {
+                                "title": "Reason for leave",
+                                "key": "re",
+                                "type": "DATA",
+                                "dataType": "string"
+                            },
+                            {
+                                "title": "Attach Documents",
+                                "key": "a",
+                                "type": "DATA",
+                                "dataType": "string"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "createdOn": 1590490425916,
+            "createdBy": "c473324d-d7ae-456e-8aad-1e43dbbea840",
+            "hidden": false,
+            "creationSource": "OTHER"
+        }

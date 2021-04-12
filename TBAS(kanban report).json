@@ -1,0 +1,20 @@
+{
+            "companyId": "190b1d56-c4b1-4aab-b273-f686ed1c8fa3",
+            "reportId": "5e31b360-9f35-11ea-97ab-955a43fcd41a",
+            "reportType": "TASK",
+            "title": "TBAS(kanban Report)",
+            "reportConfig": {
+                "type": "FORM_ANSWERS_BOARD",
+                "sources": [
+                    {
+                        "groupId": "fa3a5753-ebe5-41ee-9a09-7f61696e11c4",
+                        "formId": "bc267879-5cae-4321-8970-0d6a45078187",
+                        "url": "/forms/answers/fa3a5753-ebe5-41ee-9a09-7f61696e11c4/bc267879-5cae-4321-8970-0d6a45078187"
+                    }
+                ]
+            },
+            "createdOn": 1590486739663,
+            "createdBy": "c473324d-d7ae-456e-8aad-1e43dbbea840",
+            "hidden": false,
+            "creationSource": "OTHER"
+        }
